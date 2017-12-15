@@ -166,7 +166,7 @@ class Manage extends Component {
                                 this.state.send.map(list =>
             
                           <Table.Row>
-                            <Table.Cell width='5'>{list.title}}</Table.Cell>
+                            <Table.Cell width='5'>{list.title}</Table.Cell>
                             <Table.Cell width='4'>{list.author}</Table.Cell>
                             <Table.Cell width='5'>{list.time}</Table.Cell>
                             <Table.Cell negative width='2' textAlign='center'>

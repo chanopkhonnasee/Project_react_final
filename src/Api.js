@@ -97,10 +97,28 @@ export const getalluser = () => {
   .then(response => response.data)
 }
 
+export const getuser = (data) => {
+  return  axiosInstance.get('/api/user/getuser/'+data)
+  .then(response => response.data)
+}
+
+export const updateuser = (username,firstName,lastName,address,email,phone) => {
+  const data = {
+    firstName:	firstName ,
+    lastName: lastName ,
+    username: username ,
+    
+    address: address ,
+    email: email ,
+    phone: phone
+}
+  return  axiosInstance.put('/api/user/getuser/'+username,data)
+  .then(data => data)
+}
+
 export const deleteuser = (data) => {
   return  axiosInstance.delete('/api/user/getuser/'+data)
   .then(data => data)
- 
 }
 
 export const deletepost = (data) => {
@@ -122,5 +140,11 @@ export const loginswu = (user,pass) => {
   return  Oauth.get('/ldap_action1.php?username='+user+'&password='+pass)
   .then(data => data)
 }
+
+export const userswu = (user,) => {
+  return  Oauth.get(`http://clbs.swu.ac.th/projectphp/userprofile.php?username=`+user)
+  .then(data => data)
+}
+
 
 

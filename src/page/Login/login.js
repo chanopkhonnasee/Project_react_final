@@ -2,8 +2,8 @@ import React from 'react';
 
 import './login.css';
 
-import { login , loginswu } from '../../Api'
-import { Grid, Button, Message, Icon } from 'semantic-ui-react'
+import { login, loginswu ,userswu } from '../../Api'
+import { Grid, Button, Message, Icon,Segment } from 'semantic-ui-react'
 
 
 class Login extends React.Component {
@@ -29,9 +29,13 @@ class Login extends React.Component {
         else {
           loginswu(this.state.username, this.state.password)
           .then(data => {
-            console.log(data)
-            if (data.data == "↵ผ่าน") {
-              localStorage.setItem('username', this.state.username)
+            if (data.data.length < 6 ) {
+              userswu(this.state.username).then(data => {
+                //console.log(data.data.z303['z303-name'])
+                localStorage.setItem('username',data.data.z303['z303-name'])
+                localStorage.setItem('Oauth','true')
+              
+              })
               this.props.history.replace('/news')
             }
             else {
@@ -101,9 +105,13 @@ class Login extends React.Component {
                   </Message>) : null}
 
               </form>
-              <Message>
-                <p> New to us?    <a href='/register'>Sign Up</a></p>
-              </Message>
+              <Segment  vertical textAlign='center'><p >Sign Up with Buasri ID </p>  </Segment >
+              <Segment  textAlign='right'>
+             New to us?    <a href='/register'>Sign Up</a>  
+              </Segment>
+              
+
+              
             </div>
           </Grid.Column>
 

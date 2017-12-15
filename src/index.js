@@ -9,7 +9,7 @@ import Manage from './page/Manage/manage.js';
 import Login from './page/Login/login.js';
 import Receiver from './page/Receiver/receiver.js';
 import Register from './page/Register/register.js';
-
+import Profile from './page/Profile/profile.js';
 
 ReactDOM.render(
     (<BrowserRouter>
@@ -18,7 +18,8 @@ ReactDOM.render(
             <Route exact path="/news" component={News} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-           
+            <Route exact path="/profile" component={Profile} />
+
             {!localStorage.getItem('username') ? (
                 <Redirect to="/login" />
             ) : (

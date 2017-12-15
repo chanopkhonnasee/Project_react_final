@@ -31,7 +31,12 @@ class Navbar extends Component {
                 ) : (<Menu.Menu position='right'>
                     {localStorage.getItem('username') == 'admin' || localStorage.getItem('username') == 'mint' ?
                     (<Menu.Item href='/manage' name='manage' onClick={this.handleItemClick} ><Icon name='configure' />MANAGE</Menu.Item>):null}
-                    <Menu.Item active  ><Icon name='user' />{localStorage.getItem('username')}</Menu.Item>
+                    { localStorage.getItem('Oauth') == 'true' ? 
+                    <Menu.Item active ><Icon name='user' />{localStorage.getItem('username')}</Menu.Item>
+                    :
+                    <Menu.Item href='/profile'  ><Icon name='user' />{localStorage.getItem('username')}</Menu.Item> 
+                    }
+                    
                     <Menu.Item name='Sign out' onClick={this.signout} > <Button color='red'>Sign Out</Button></Menu.Item>
                     </Menu.Menu>
                     )}
