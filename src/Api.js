@@ -122,12 +122,12 @@ export const deleteuser = (data) => {
 }
 
 export const deletepost = (data) => {
-  return  axiosInstance.get('/api/post/delete/'+data)
+  return  axiosInstance.delete('/api/post/delete/'+data)
   .then(data => data)
 }
 
 export const deletesend = (data) => {
-  return  axiosInstance.get('/api/send/delete/'+data)
+  return  axiosInstance.delete('/api/send/delete/'+data)
   .then(data => data)
 }
 

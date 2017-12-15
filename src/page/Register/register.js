@@ -38,7 +38,7 @@ class Register extends Component {
     signup(this.state.firstName, this.state.lastName, this.state.username, this.state.password, this.state.address, this.state.email, this.state.phone)
       .then(data => {
         if (data.status === 200) {
-          this.props.history.replace('/news')
+          window.location.assign('/news')
         }
 
       })

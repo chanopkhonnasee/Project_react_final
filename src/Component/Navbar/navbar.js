@@ -13,7 +13,7 @@ class Navbar extends Component {
       signout = event => {
         localStorage.clear();
         console.log(this.props);
-       window.location.reload()
+        window.location.assign('/news')
       }
 
     render() {

@@ -39,12 +39,12 @@ class Profile extends Component {
         updateuser(this.state.username,this.state.firstName,this.state.lastName,this.state.address,this.state.email,this.state.phone)
         .then(data => {
           if (data.status === 200) {
-          this.componentDidMount()
+          this.componentWillMount()
           }
         })
       }
      
-      componentDidMount(){
+      componentWillMount(){
         getuser(localStorage.getItem('username'))
         .then(data =>{
         this.setState({ username: data.username }),
