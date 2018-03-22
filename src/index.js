@@ -10,6 +10,7 @@ import Login from './page/Login/login.js';
 import Receiver from './page/Receiver/receiver.js';
 import Register from './page/Register/register.js';
 import Profile from './page/Profile/profile.js';
+import Nopage from './page/Nopage/nopage.js';
 
 ReactDOM.render(
     (<BrowserRouter>
@@ -19,11 +20,12 @@ ReactDOM.render(
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
-
+            
             {!localStorage.getItem('username') ? (
                 <Redirect to="/login" />
             ) : (
                     <Switch>
+                        
                         <Route exact path="/receiver" component={Receiver} />
                         <Route exact path="/sender" component={Sender} />
                         <Route exact path="/manage" component={Manage} />

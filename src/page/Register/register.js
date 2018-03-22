@@ -35,13 +35,21 @@ class Register extends Component {
 
   onSubmit(e) {
 
-    signup(this.state.firstName, this.state.lastName, this.state.username, this.state.password, this.state.address, this.state.email, this.state.phone)
-      .then(data => {
-        if (data.status === 200) {
-          window.location.assign('/news')
-        }
+    if (this.state.firstName == '' || this.state.lastName == '' || this.state.username == '' || this.state.password == '' || this.state.address == '' || this.state.email == '' || this.state.phone == '') {
 
-      })
+      alert('Please fill the form')
+    }
+    {
+
+
+      signup(this.state.firstName, this.state.lastName, this.state.username, this.state.password, this.state.address, this.state.email, this.state.phone)
+        .then(data => {
+          if (data.status === 200) {
+            window.location.assign('/news')
+          }
+
+        })
+    }
 
   }
 
@@ -70,10 +78,10 @@ class Register extends Component {
                     <div class="ui input">
                       <input type="text" placeholder="Username" name='username' onChange={this.onTextChange} />
                       <Message
-                      error
-                      header='Action Forbidden'
-                      content='You can only sign up for an account once with a given e-mail address.'
-                    />
+                        error
+                        header='Action Forbidden'
+                        content='You can only sign up for an account once with a given e-mail address.'
+                      />
                     </div>
                   </div>
                 </div>
@@ -121,7 +129,7 @@ class Register extends Component {
                     <div class="required field">
                       <label>Email</label>
                       <div class="ui input">
-                        <input type="text" placeholder="Email" name='email' onChange={this.onTextChange} />
+                        <input type="email" placeholder="Email" name='email' onChange={this.onTextChange} />
                       </div>
                     </div>
                   </div>
@@ -130,7 +138,7 @@ class Register extends Component {
                     <div class="required field">
                       <label>Phone</label>
                       <div class="ui input">
-                        <input type="text" placeholder="Phone" name='phone' onChange={this.onTextChange} />
+                        <input type="tel" maxlength="10" placeholder="Phone" name='phone' onChange={this.onTextChange} />
                       </div>
                     </div>
                   </div>
@@ -180,7 +188,7 @@ These terms and/or your use of the website shall be governed by and construed in
                     <label>I agree to the Terms and Conditions</label>
                   </div>
                 </div>
-                <Button negative class="ui button" onClick={this.onSubmit}>Submit</Button>
+                <Button floated='right' negative class="ui button" onClick={this.onSubmit}>Submit</Button>
               </form>
             </div>
           </div>
@@ -188,6 +196,7 @@ These terms and/or your use of the website shall be governed by and construed in
           </div>
           <br />
         </div>
+        <br /><br /><br />
         <Footer />
       </div>
     );

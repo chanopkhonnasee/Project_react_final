@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../../styles/semantic.min.css'
-import { Button, Header, Image, Form,Modal } from 'semantic-ui-react'
+import { Button, Header, Image, Form,Modal,Input } from 'semantic-ui-react'
 import { publishPosts } from '../../Api'
 
 
@@ -63,7 +63,7 @@ class Sender extends Component {
     return (
       <div className="sender">
         <Navbar />
-        <div class="rebody">
+        <div class="senbody">
           <br />
           <Header>I give<i aria-hidden="true" class="book icon"></i> </Header>
           <Form>
@@ -81,10 +81,10 @@ class Sender extends Component {
                         <p>Import Book's Image</p>
                       </Modal.Header>
                       <Modal.Content>
-                        <input size='large' name='img' onChange={this.onTextChange} />
+                        <Input size='large' name='img' onChange={this.onTextChange} />
                       </Modal.Content>
                       <Modal.Actions>
-                      <Button positive icon='checkmark' labelPosition='right' content='Yes' onClick={this.close} />
+                      <Button negative icon='checkmark' labelPosition='right' content='OK' onClick={this.close} />
                       </Modal.Actions>
                     </Modal>
                   </div>
