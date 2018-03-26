@@ -105,7 +105,7 @@ class Login extends React.Component {
                   </Message>) : null}
 
               </form>
-              <Segment  vertical textAlign='center'><p >Sign Up with Buasri ID </p>  </Segment >
+              {/* <Segment  vertical textAlign='center'><p >Sign Up with Buasri ID </p>  </Segment > */}
               <Segment  textAlign='right'>
              New to us?    <a href='/register'>Sign Up</a>  
               </Segment>

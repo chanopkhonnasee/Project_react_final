@@ -90,7 +90,7 @@ class Register extends Component {
 
                     <label>Password</label>
                     <div class="ui input">
-                      <input type="text" placeholder="Password" name='password' onChange={this.onTextChange} />
+                      <input type="password" placeholder="Password" name='password' onChange={this.onTextChange} />
                     </div>
                   </div>
 

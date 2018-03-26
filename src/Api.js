@@ -56,7 +56,7 @@ export const publishPost = (title,content,category,contact,img) => {
     img: img
   }
 
-  return axiosInstance.post('api/post/create/', data)
+  return axiosInstance.post('/api/post/create/', data)
     .then(data => data)
     .catch(error => error.response)
 }
@@ -71,7 +71,7 @@ export const publishPosts = (title,content,category,contact,img) => {
     img: img
   }
 
-  return axiosInstance.post('api/send/create/', data)
+  return axiosInstance.post('/api/send/create/', data)
     .then(data => data)
     .catch(error => error.response)
 }
@@ -87,7 +87,7 @@ export const signup = (firstName , lastName , username, password, address, email
     phone: phone
 }
 
-  return axiosInstance.post('api/user/signup', data)
+  return axiosInstance.post('/api/user/signup', data)
     .then(data => data)
     .catch(error => error.response)
 }
