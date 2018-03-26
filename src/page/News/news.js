@@ -102,12 +102,12 @@ class News extends Component {
         </Item.Group>
         </Tab.Pane>,
       },
-      {
-        menuItem: <Menu.Menu position='right'>
-          <Menu.Item>
-            <Input type="text" icon={{ name: 'search', link: true }} placeholder='Search...' onChange={this.onChange} />
-          </Menu.Item></Menu.Menu >
-      },
+      // {
+      //   menuItem: <Menu.Menu position='right'>
+      //     <Menu.Item>
+      //       <Input type="text" icon={{ name: 'search', link: true }} placeholder='Search...' onChange={this.onChange} />
+      //     </Menu.Item></Menu.Menu >
+      // },
 
     ]
 
