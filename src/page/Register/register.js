@@ -116,7 +116,7 @@ class Register extends Component {
 
 
                 <div class="field">
-                  <div class="required field">
+                  <div class=" field">
                     <label>Address</label>
                     <div class="ui input">
                       <input type="text" placeholder="Address" name='address' onChange={this.onTextChange} />
