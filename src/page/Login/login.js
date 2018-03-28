@@ -47,6 +47,8 @@ class Login extends React.Component {
   }
   render() {
     return (
+     
+      
       <Grid columns={3}>
         <Grid.Row>
 
@@ -120,7 +122,7 @@ class Login extends React.Component {
 
         </Grid.Row>
       </Grid>
-    );
+    )
   }
 }
 
