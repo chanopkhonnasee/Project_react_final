@@ -6,7 +6,7 @@ import SimpleReactFileUpload from '../../Component/Upload/SimpleReactFileUpload'
 
 import 'semantic-ui-css/semantic.min.css';
 import './manage.css';
-import { Button, Icon, Table, Menu, Tab, Image as ImageComponent, Header } from 'semantic-ui-react'
+import { Button, Icon, Table, Menu, Tab, Image as ImageComponent, Header ,Responsive} from 'semantic-ui-react'
 import { getalluser, deleteuser, deletepost, deletesend, getall, getalls } from '../../Api'
 
 
@@ -189,6 +189,7 @@ class Manage extends Component {
 
     return (
       <div className="Manage">
+        
         <Navbar />
         <br />
 

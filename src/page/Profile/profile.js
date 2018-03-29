@@ -5,7 +5,7 @@ import Navbar from '../../Component/Navbar/navbar';
 
 import 'semantic-ui-css/semantic.min.css';
 import './profile.css';
-import { Button, Label, Card, Image, Checkbox, Icon, Table, Menu, Tab, Input, Image as ImageComponent, Item, Header, Message } from 'semantic-ui-react'
+import { Button, Label, Card, Image, Checkbox, Icon, Table, Menu, Tab, Input, Image as ImageComponent, Item, Header, Message, Responsive } from 'semantic-ui-react'
 import { getuser, updateuser } from '../../Api'
 
 const colors = ['red']
@@ -63,87 +63,174 @@ class Profile extends Component {
         const user = this.state.user.username
         return (
             <div className="Profile">
-                <Navbar />
-                <br />
-                <div class='pro'>
-                <div>
-                    <Header as='h2' icon textAlign='center'>
-                        <Icon name='id card outline' circular />
-                        <Header.Content>
-                            YOUR PROFILE
+
+                <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+                    <Navbar />
+                    <br />
+                    <div class='pro'>
+                        <div>
+                            <Header as='h2' icon textAlign='center'>
+                                <Icon name='id card outline' circular />
+                                <Header.Content>
+                                    YOUR PROFILE
             </Header.Content>
-                    </Header>
-                </div>
-                <br />
+                            </Header>
+                        </div>
+                        <br />
 
-                <div class="ui grid">
-                    <div class="four wide column">
-                    </div>
-                    <div class="eight wide column">
-                        <form class="ui form ">
+                        <div class="ui grid">
+                            <div class="four wide column">
+                            </div>
+                            <div class="eight wide column">
+                                <form class="ui form ">
 
 
 
-                            <div class="unstackable two fields">
-                                <div class="field">
-                                    <label>Username</label>
-                                    <div class="ui input">
-                                        <input type="text" value={this.state.username} name='username' onChange={this.onChange} />
-                                    </div>
-                                </div>
-                                {/* <div class="field">
+                                    <div class="unstackable two fields">
+                                        <div class="field">
+                                            <label>Username</label>
+                                            <div class="ui input">
+                                                <input type="text" value={this.state.username} name='username' onChange={this.onChange} />
+                                            </div>
+                                        </div>
+                                        {/* <div class="field">
                                     <label>Password</label>
                                     <div class="ui input">
                                         <input type="text" value={this.state.password}   name='password' onChange={this.onChange}/>
                                     </div>
                                 </div> */}
-                            </div>
-                            <div class="unstackable two fields">
-                                <div class="field">
-                                    <label>First Name</label>
-                                    <div class="ui input">
-                                        <input type="text" value={this.state.firstName} name='firstName' onChange={this.onChange} />
                                     </div>
-                                </div>
-                                <div class="field">
-                                    <label>Last Name</label>
-                                    <div class="ui input">
-                                        <input type="text" value={this.state.lastName} name='lastName' onChange={this.onChange} />
+                                    <div class="unstackable two fields">
+                                        <div class="field">
+                                            <label>First Name</label>
+                                            <div class="ui input">
+                                                <input type="text" value={this.state.firstName} name='firstName' onChange={this.onChange} />
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label>Last Name</label>
+                                            <div class="ui input">
+                                                <input type="text" value={this.state.lastName} name='lastName' onChange={this.onChange} />
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label>Address</label>
-                                <div class="ui input">
-                                    <input type="text" value={this.state.address} name='address' onChange={this.onChange} />
-                                </div>
-                            </div>
-                            <div class="two fields">
-                                <div class="field">
-                                    <label>Email</label>
-                                    <div class="ui input">
-                                        <input type="text" value={this.state.email} name='email' onChange={this.onChange} />
+                                    <div class="field">
+                                        <label>Address</label>
+                                        <div class="ui input">
+                                            <input type="text" value={this.state.address} name='address' onChange={this.onChange} />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="field">
-                                    <label>Phone</label>
-                                    <div class="ui input">
-                                        <input type="text" value={this.state.phone} name='phone' onChange={this.onChange} />
+                                    <div class="two fields">
+                                        <div class="field">
+                                            <label>Email</label>
+                                            <div class="ui input">
+                                                <input type="text" value={this.state.email} name='email' onChange={this.onChange} />
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label>Phone</label>
+                                            <div class="ui input">
+                                                <input type="text" value={this.state.phone} name='phone' onChange={this.onChange} />
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
 
 
-                            <Button negative floated='right' class="ui button" onClick={this.onSubmit}>Submit</Button>
-                        </form>
+                                    <Button negative floated='right' class="ui button" onClick={this.onSubmit}>Submit</Button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="four wide column">
+                        </div>
+                        <br />
                     </div>
-                </div>
-                <div class="four wide column">
-                </div>
-                <br />
-                </div>
-                <Footer />
+                    <Footer />
+                </Responsive>
+                <Responsive {...Responsive.onlyMobile}>
+                    <Navbar />
+                    <br />
+                    <div class='pro'>
+                        <div>
+                            <Header as='h2' icon textAlign='center'>
+                                <Icon name='id card outline' circular />
+                                <Header.Content>
+                                    YOUR PROFILE
+            </Header.Content>
+                            </Header>
+                        </div>
+                        <br />
+
+                        <div class="ui grid">
+                            <div class="four wide column">
+                            </div>
+                            <div class="eight wide column">
+                                <form class="ui form ">
+
+
+
+                                    <div class="unstackable two fields">
+                                        <div class="field">
+                                            <label>Username</label>
+                                            <div class="ui input">
+                                                <input type="text" value={this.state.username} name='username' onChange={this.onChange} />
+                                            </div>
+                                        </div>
+                                        {/* <div class="field">
+                                    <label>Password</label>
+                                    <div class="ui input">
+                                        <input type="text" value={this.state.password}   name='password' onChange={this.onChange}/>
+                                    </div>
+                                </div> */}
+                                    </div>
+                                    <div class="unstackable two fields">
+                                        <div class="field">
+                                            <label>First Name</label>
+                                            <div class="ui input">
+                                                <input type="text" value={this.state.firstName} name='firstName' onChange={this.onChange} />
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label>Last Name</label>
+                                            <div class="ui input">
+                                                <input type="text" value={this.state.lastName} name='lastName' onChange={this.onChange} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Address</label>
+                                        <div class="ui input">
+                                            <input type="text" value={this.state.address} name='address' onChange={this.onChange} />
+                                        </div>
+                                    </div>
+                                    <div class="two fields">
+                                        <div class="field">
+                                            <label>Email</label>
+                                            <div class="ui input">
+                                                <input type="text" value={this.state.email} name='email' onChange={this.onChange} />
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label>Phone</label>
+                                            <div class="ui input">
+                                                <input type="text" value={this.state.phone} name='phone' onChange={this.onChange} />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <Button negative floated='right' class="ui button" onClick={this.onSubmit}>Submit</Button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="four wide column">
+                        </div>
+                        <br />
+                    </div>
+                    <Footer />
+                </Responsive>
+
             </div>
 
 

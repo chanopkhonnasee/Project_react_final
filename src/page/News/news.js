@@ -6,7 +6,7 @@ import Navbar from '../../Component/Navbar/navbar';
 
 import 'semantic-ui-css/semantic.min.css';
 import './news.css';
-import { Label, Menu, Tab, Input, Button, Icon, Image as ImageComponent, Item, TextArea } from 'semantic-ui-react'
+import { Label, Menu, Tab, Input, Button, Icon, Image as ImageComponent, Item, TextArea, Responsive } from 'semantic-ui-react'
 
 import { getall, apiupload, apisearch, getalls, apisearchs } from '../../Api'
 
@@ -111,15 +111,28 @@ class News extends Component {
 
     ]
 
+      // ********************* แก้VIEWโดยการสร้างตัวแปรคล้ายๆ panes ***********************
     return (
       <div className="News">
-        <Navbar />
-        <br />
-        <div class="postn">
-          <Tab panes={panes} />
-        </div >
-        <br />
-        <Footer />
+        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+          <Navbar />
+          <br />
+          <div class="postn">
+            <Tab panes={panes} />
+          </div >
+          <br />
+          <Footer />
+        </Responsive>
+        <Responsive {...Responsive.onlyMobile}>
+          <Navbar />
+          <br />
+          <div class="postn">
+            <Tab panes={panes} /> 
+          </div >
+          <br />
+          <Footer />
+        </Responsive>
+
       </div>
     );
   }
