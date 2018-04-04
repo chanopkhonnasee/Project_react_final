@@ -14,6 +14,7 @@ class Footer extends Component {
           <Image src={logo} spaced='right' size='mini'></Image>
           <span><Icon name='copyright' /> 2017 by Sharing Our Heart</span>
         </Responsive>
+        
         <Responsive {...Responsive.onlyMobile}>
           <Image src={logo} spaced='right' size='mini'></Image>
           <span><Icon name='copyright' /> 2017 by Sharing Our Heart</span>

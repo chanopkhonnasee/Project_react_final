@@ -47,142 +47,155 @@ class Login extends React.Component {
   }
   render() {
     return (
+      <div>
+        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+          <Grid columns={3}>
+            <Grid.Row>
+
+              <Grid.Column width={5}>
+              </Grid.Column>
+
+              <Grid.Column width={6}>
+                <div class="blog">
 
 
-      <Grid columns={3}>
-        <Grid.Row>
-
-          <Grid.Column width={5}>
-          </Grid.Column>
-
-          <Grid.Column width={6}>
-            <div class="blog">
-
-              <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-                <div>
-                  <h2 class="ui icon center aligned header">
-                    <Icon aria-hidden="true" name="user circular "></Icon>
-                    <div class="content">SIGN IN</div>
-                  </h2>
-                </div>
-                <br />
-
-                <form className='ui large form' onSubmit={this.onSubmit}>
-                  <div className='ui stacked segment'>
-                    <div className='field'>
-                      <div className='ui left icon input'>
-                        <i className='user icon' />
-                        <input
-                          type='text'
-                          name='username'
-                          placeholder='Username'
-                          value={this.state.username}
-                          onChange={this.onTextChange} />
-                      </div>
-                    </div>
-
-                    <div className='field'>
-                      <div className='ui left icon input'>
-                        <i className='lock icon' />
-                        <input
-                          type='password'
-                          name='password'
-                          placeholder='Password'
-                          value={this.state.password}
-                          onChange={this.onTextChange} />
-                      </div>
-                    </div>
-
-                    <div className='field'>
-                      <div className='ui left icon input'>
-                        <Button negative type='submit' className='ui  fluid button'>
-                          Sign In
-                  </Button>
-                      </div>
-                    </div>
+                  <div>
+                    <h2 class="ui icon center aligned header">
+                      <Icon aria-hidden="true" name="user circular "></Icon>
+                      <div class="content">SIGN IN</div>
+                    </h2>
                   </div>
+                  <br />
 
-                  {this.state.fail == 'fail' ?
-                    (<Message size='tiny' negative>
-                      <Message.Header>Username or Password is Incorrect !</Message.Header>
-                      <p>Please double-check and try again.</p>
-                    </Message>) : null}
-
-                </form>
-                {/* <Segment  vertical textAlign='center'><p >Sign Up with Buasri ID </p>  </Segment > */}
-                <Segment textAlign='right'>
-                  New to us?    <a href='/register'>Sign Up</a>
-                </Segment>
-              </Responsive>
-              <Responsive {...Responsive.onlyMobile}>
-                <div>
-                  <h2 class="ui icon center aligned header">
-                    <Icon aria-hidden="true" name="user circular "></Icon>
-                    <div class="content">SIGN IN</div>
-                  </h2>
-                </div>
-                <br />
-
-                <form className='ui large form' onSubmit={this.onSubmit}>
-                  <div className='ui stacked segment'>
-                    <div className='field'>
-                      <div className='ui left icon input'>
-                        <i className='user icon' />
-                        <input
-                          type='text'
-                          name='username'
-                          placeholder='Username'
-                          value={this.state.username}
-                          onChange={this.onTextChange} />
+                  <form className='ui large form' onSubmit={this.onSubmit}>
+                    <div className='ui stacked segment'>
+                      <div className='field'>
+                        <div className='ui left icon input'>
+                          <i className='user icon' />
+                          <input
+                            type='text'
+                            name='username'
+                            placeholder='Username'
+                            value={this.state.username}
+                            onChange={this.onTextChange} />
+                        </div>
                       </div>
-                    </div>
 
-                    <div className='field'>
-                      <div className='ui left icon input'>
-                        <i className='lock icon' />
-                        <input
-                          type='password'
-                          name='password'
-                          placeholder='Password'
-                          value={this.state.password}
-                          onChange={this.onTextChange} />
+                      <div className='field'>
+                        <div className='ui left icon input'>
+                          <i className='lock icon' />
+                          <input
+                            type='password'
+                            name='password'
+                            placeholder='Password'
+                            value={this.state.password}
+                            onChange={this.onTextChange} />
+                        </div>
                       </div>
-                    </div>
 
-                    <div className='field'>
-                      <div className='ui left icon input'>
-                        <Button negative type='submit' className='ui  fluid button'>
-                          Sign In
+                      <div className='field'>
+                        <div className='ui left icon input'>
+                          <Button negative type='submit' className='ui  fluid button'>
+                            Sign In
                   </Button>
+                        </div>
                       </div>
                     </div>
+
+                    {this.state.fail == 'fail' ?
+                      (<Message size='tiny' negative>
+                        <Message.Header>Username or Password is Incorrect !</Message.Header>
+                        <p>Please double-check and try again.</p>
+                      </Message>) : null}
+
+                  </form>
+                  {/* <Segment  vertical textAlign='center'><p >Sign Up with Buasri ID </p>  </Segment > */}
+                  <Segment textAlign='right'>
+                    New to us?    <a href='/register'>Sign Up</a>
+                  </Segment>
+
+                </div>
+              </Grid.Column>
+
+              <Grid.Column width={5}>
+              </Grid.Column>
+
+            </Grid.Row>
+          </Grid>
+        </Responsive>
+
+
+        <Responsive {...Responsive.onlyMobile}>
+         <Grid columns={1}>
+            <Grid.Row centered relaxed > 
+
+              <Grid.Column  width={10}>
+                <div class="bmolog">
+
+
+                  <div>
+                    <h2 class="ui icon center aligned header">
+                      <Icon aria-hidden="true" name="user circular "></Icon>
+                      <div class="content">SIGN IN</div>
+                    </h2>
                   </div>
+                  <br />
 
-                  {this.state.fail == 'fail' ?
-                    (<Message size='tiny' negative>
-                      <Message.Header>Username or Password is Incorrect !</Message.Header>
-                      <p>Please double-check and try again.</p>
-                    </Message>) : null}
+                  <form className='ui large form' onSubmit={this.onSubmit}>
+                    <div className='ui stacked segment'>
+                      <div className='field'>
+                        <div className='ui left icon input'>
+                          <i className='user icon' />
+                          <input
+                            type='text'
+                            name='username'
+                            placeholder='Username'
+                            value={this.state.username}
+                            onChange={this.onTextChange} />
+                        </div>
+                      </div>
 
-                </form>
-                {/* <Segment  vertical textAlign='center'><p >Sign Up with Buasri ID </p>  </Segment > */}
-                <Segment textAlign='right'>
-                  New to us?    <a href='/register'>Sign Up</a>
-                </Segment>
-              </Responsive>
+                      <div className='field'>
+                        <div className='ui left icon input'>
+                          <i className='lock icon' />
+                          <input
+                            type='password'
+                            name='password'
+                            placeholder='Password'
+                            value={this.state.password}
+                            onChange={this.onTextChange} />
+                        </div>
+                      </div>
+
+                      <div className='field'>
+                        <div className='ui left icon input'>
+                          <Button negative type='submit' className='ui  fluid button'>
+                            Sign In
+                  </Button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {this.state.fail == 'fail' ?
+                      (<Message size='tiny' negative>
+                        <Message.Header>Username or Password is Incorrect !</Message.Header>
+                        <p>Please double-check and try again.</p>
+                      </Message>) : null}
+
+                  </form>
+                  {/* <Segment  vertical textAlign='center'><p >Sign Up with Buasri ID </p>  </Segment > */}
+                  <Segment textAlign='right'>
+                    New to us?    <a href='/register'>Sign Up</a>
+                  </Segment>
+
+                </div>
+              </Grid.Column>
 
 
-
-
-
-            </div>
-          </Grid.Column>
-
-          <Grid.Column width={5}>
-          </Grid.Column>
-
-        </Grid.Row>
-      </Grid>
+            </Grid.Row>
+          </Grid>
+        </Responsive>
+      </div>
     )
   }
 }

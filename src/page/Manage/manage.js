@@ -6,7 +6,7 @@ import SimpleReactFileUpload from '../../Component/Upload/SimpleReactFileUpload'
 
 import 'semantic-ui-css/semantic.min.css';
 import './manage.css';
-import { Button, Icon, Table, Menu, Tab, Image as ImageComponent, Header ,Responsive} from 'semantic-ui-react'
+import { Button, Icon, Table, Menu, Tab, Image as ImageComponent, Header, Responsive, Grid } from 'semantic-ui-react'
 import { getalluser, deleteuser, deletepost, deletesend, getall, getalls } from '../../Api'
 
 
@@ -187,33 +187,159 @@ class Manage extends Component {
 
     ]
 
+    const panesmo = [
+      {
+        menuItem: { key: 'users', icon: 'users', content: 'User' },
+        render: () => <Tab.Pane>
+          {colors.map(color => (
+            <Table color={color} key={color} celled padded>
+              
+
+              <Table.Body>
+
+                {this.state.user.length >= 0 ?
+                  this.state.user.map(list =>
+
+                    <Table.Row>
+                      <Table.Cell >{list.firstName} {list.lastName}</Table.Cell>
+                      <Table.Cell >{list.phone}</Table.Cell>
+                      <Table.Cell >{list.email}</Table.Cell>
+                      <Table.Cell negative textAlign='center'>
+                        <Button icon negative size='tiny' value={list.username} onClick={this.onSubmit1}>
+                          <Icon name='close' /></Button>
+                      </Table.Cell>
+                    </Table.Row>
+
+                  ) : null
+                }
+
+
+              </Table.Body>
+            </Table>
+          ))}
+
+        </Tab.Pane>,
+      },
+      {
+        menuItem: <Menu.Item ><Icon name='remove bookmark' />Donee</Menu.Item>,
+        render: () => <Tab.Pane>
+          {colors.map(color => (
+            <Table color={color} key={color} celled padded>
+              
+
+              <Table.Body>
+
+                {this.state.post.length >= 0 ?
+                  this.state.post.map(list =>
+
+                    <Table.Row>
+                      <Table.Cell >{list.title}</Table.Cell>
+                      <Table.Cell >{list.author}</Table.Cell>
+                      <Table.Cell >{list.time}</Table.Cell>
+                      <Table.Cell negative textAlign='center'>
+                        <Button icon negative size='tiny' value={list._id} onClick={this.onSubmit2}>
+                          <Icon name='close' /></Button>
+                      </Table.Cell>
+                    </Table.Row>
+
+                  ) : null
+                }
+
+
+              </Table.Body>
+
+
+            </Table>
+          ))}
+        </Tab.Pane>,
+      },
+      {
+        menuItem: <Menu.Item ><Icon name='bookmark' />Donor</Menu.Item>,
+        render: () => <Tab.Pane>
+          {colors.map(color => (
+            <Table color={color} key={color} celled padded>
+            
+
+              <Table.Body>
+
+                {this.state.send.length >= 0 ?
+                  this.state.send.map(list =>
+
+                    <Table.Row>
+                      <Table.Cell >{list.title}</Table.Cell>
+                      <Table.Cell >{list.author}</Table.Cell>
+                      <Table.Cell >{list.time}</Table.Cell>
+                      <Table.Cell negative textAlign='center'>
+                        <Button icon negative size='tiny' value={list._id} onClick={this.onSubmit3}>
+                          <Icon name='close' /></Button>
+                      </Table.Cell>
+                    </Table.Row>
+
+                  ) : null
+                }
+              </Table.Body>
+
+
+            </Table>
+          ))}
+        </Tab.Pane>,
+      },
+
+    ]
+
     return (
       <div className="Manage">
-        
-        <Navbar />
-        <br />
-
-        <div class='man'>
-          <div>
-            <Header as='h2' icon textAlign='center'>
-              <Icon name='users' circular />
-              <Header.Content>
-                MANAGEMENT
+        <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+          <Navbar />
+          <br />
+          <Grid centered >
+            <Grid.Column width={15}>
+              <div class='man'>
+                <div>
+                  <Header as='h2' icon textAlign='center'>
+                    <Icon name='users' circular />
+                    <Header.Content>
+                      MANAGEMENT
           </Header.Content>
-            </Header>
-          </div>
+                  </Header>
+                </div>
+                <div >
+                  <Tab panes={panes} />
+                  <br /><br /><br />
+                  <SimpleReactFileUpload />
+                </div >
+              </div>
+              <br /><br /><br /><br />
+            </Grid.Column>
+          </Grid>
+          <Footer />
+        </Responsive>
 
-          <div class="postn">
-            <Tab panes={panes} />
-
-            <br /><br /><br />
-            <SimpleReactFileUpload />
-          </div >
-
-
-        </div>
-        <br /><br /><br /><br />
-        <Footer />
+        <Responsive {...Responsive.onlyMobile}>
+          <Navbar />
+          <br />
+          <Grid centered >
+          <Grid.Column width={15}>
+            <div class='manmo'>
+              <div>
+                <Header as='h2' icon textAlign='center'>
+                  <Icon name='users' circular />
+                  <Header.Content>
+                    MANAGEMENT
+        </Header.Content>
+                </Header>
+              </div>
+              <div >
+                <Tab panes={panesmo} />
+                <br /><br /><br />
+                <SimpleReactFileUpload />
+              </div >
+            </div>
+            <br /><br /><br /><br />
+          </Grid.Column>
+        </Grid>
+          <Footer />
+        </Responsive>
       </div>
     );
   }

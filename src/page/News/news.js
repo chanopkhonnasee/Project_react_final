@@ -59,9 +59,14 @@ class News extends Component {
                 <Item.Content>
                   <Item.Header as='a'>{list.title}</Item.Header><br /><br />
                   <p>Description</p>
-                  <Item.Description><TextArea rows='5' cols='80' readonly='true'>{list.content}</TextArea></Item.Description>
+                  <Item.Description>
+                  <div class="field">
+                      <TextArea autoHeight rows={5}  readonly='true'>{list.content}</TextArea>
+                    </div></Item.Description>
                   <Item.Extra>
-                    <Label>{list.category}</Label>
+                  
+                    <Label size="mini">{list.category}</Label>
+                   
                   </Item.Extra>
                   <Item.Meta>
                     <span className='cinema'>Contact: {list.contact}</span>
@@ -87,9 +92,12 @@ class News extends Component {
                 <Item.Content>
                   <Item.Header as='a'>{list.title}</Item.Header><br /><br />
                   <p>Description</p>
-                  <TextArea label='Description' rows='5' cols='80' readonly='true'>{list.content}</TextArea>
+                  <Item.Description>
+                  <div class="field">
+                      <TextArea  rows={5} cols={10} readonly='true'>{list.content}</TextArea>
+                    </div></Item.Description>
                   <Item.Extra>
-                    <Label>{list.category}</Label>
+                    <Label size="mini">{list.category}</Label>
                   </Item.Extra>
 
                   <Item.Meta>
@@ -112,6 +120,80 @@ class News extends Component {
     ]
 
       // ********************* แก้VIEWโดยการสร้างตัวแปรคล้ายๆ panes ***********************
+      const panesmo = [
+        {
+          menuItem: <Menu.Item ><Icon name='talk outline' />Donee</Menu.Item>,
+          render: () => <Tab.Pane><Item.Group divided>
+  
+  
+            {this.state.post.length >= 0 ?
+              this.state.post.map(list =>
+  
+                <Item>
+                  <Item.Image size='tiny' src={list.img} />
+  
+                  <Item.Content>
+                    <Item.Header as='a'>{list.title}</Item.Header><br /><br />
+                    <p>Description</p>
+                    <Item.Description>
+                    <div class="field">
+                      <TextArea  rows={3}  readonly='true'>{list.content}</TextArea>
+                      </div>
+                    </Item.Description>
+                    <Item.Extra>
+                      <Label>{list.category}</Label>
+                    </Item.Extra>
+                    <Item.Meta>
+                      <span className='cinema'>Contact: {list.contact}</span>
+                    </Item.Meta>
+                  </Item.Content>
+                </Item>
+              ) : null
+            }
+          </Item.Group>
+          </Tab.Pane>,
+        },
+        {
+          menuItem: <Menu.Item ><Icon name='talk' />Donor</Menu.Item>,
+          render: () => <Tab.Pane><Item.Group divided>
+  
+  
+            {this.state.send.length >= 0 ?
+              this.state.send.map(list =>
+  
+                <Item>
+                  <Item.Image src={list.img} />
+  
+                  <Item.Content>
+                    <Item.Header as='a'>{list.title}</Item.Header><br /><br />
+                    <p>Description</p>
+                    <Item.Description>
+                    <div class="field">
+                      <TextArea  rows={3}  readonly='true'>{list.content}</TextArea>
+                      </div>
+                    </Item.Description>
+                    <Item.Extra>
+                      <Label>{list.category}</Label>
+                    </Item.Extra>
+  
+                    <Item.Meta>
+                      <span className='cinema'>Contact: {list.contact}</span>
+                    </Item.Meta>
+                  </Item.Content>
+                </Item>
+              ) : null
+            }
+          </Item.Group>
+          </Tab.Pane>,
+        },
+        // {
+        //   menuItem: <Menu.Menu position='right'>
+        //     <Menu.Item>
+        //       <Input type="text" icon={{ name: 'search', link: true }} placeholder='Search...' onChange={this.onChange} />
+        //     </Menu.Item></Menu.Menu >
+        // },
+  
+      ]
     return (
       <div className="News">
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -123,11 +205,12 @@ class News extends Component {
           <br />
           <Footer />
         </Responsive>
+
         <Responsive {...Responsive.onlyMobile}>
           <Navbar />
           <br />
-          <div class="postn">
-            <Tab panes={panes} /> 
+          <div class="postnmo">
+            <Tab panes={panesmo} /> 
           </div >
           <br />
           <Footer />

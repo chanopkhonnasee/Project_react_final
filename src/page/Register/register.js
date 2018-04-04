@@ -67,10 +67,9 @@ class Register extends Component {
               </h2>
             </div>
 
-            <div class="ui grid">
-              <div class="four wide column">
-              </div>
-              <div class="eight wide column">
+            <div class="ui grid centered">
+             
+              <div class="ten wide column">
                 <form class="ui form" error>
 
                   <div class="field">
@@ -193,17 +192,18 @@ These terms and/or your use of the website shall be governed by and construed in
                 </form>
               </div>
             </div>
-            <div class="four wide column">
-            </div>
+            
             <br />
           </div>
           <br /><br /><br />
           <Footer />
         </Responsive>
+
+        
         <Responsive {...Responsive.onlyMobile}>
           <Navbar />
 
-          <div class='regis'>
+          <div class='regismo'>
             <div>
               <h2 class="ui icon center aligned header">
                 <i aria-hidden="true" class="users circular icon"></i>
@@ -211,10 +211,9 @@ These terms and/or your use of the website shall be governed by and construed in
               </h2>
             </div>
 
-            <div class="ui grid">
-              <div class="four wide column">
-              </div>
-              <div class="eight wide column">
+            <div class="ui grid centered">
+              
+              <div class="fourteen wide column">
                 <form class="ui form" error>
 
                   <div class="field">
@@ -290,7 +289,7 @@ These terms and/or your use of the website shall be governed by and construed in
 
                   </div>
                   <div class="field">
-                    <textarea readonly="">Welcome to the registration to Sharing Ours Heart website and its related services. You may access many areas of our website without registering your details with us. Certain areas are only open to you if you register. The terms and conditions which govern material submitted by you to us and your use of the www.telegraph.co.uk website (including all 'Telegraph' branded microsites and any email bulletins) are governed by our general "Terms and Conditions of Reading". These Terms and Conditions of Registration are in addition to the general Terms and Conditions of Reading.
+                    <textarea rows="3" readonly="">Welcome to the registration to Sharing Ours Heart website and its related services. You may access many areas of our website without registering your details with us. Certain areas are only open to you if you register. The terms and conditions which govern material submitted by you to us and your use of the www.telegraph.co.uk website (including all 'Telegraph' branded microsites and any email bulletins) are governed by our general "Terms and Conditions of Reading". These Terms and Conditions of Registration are in addition to the general Terms and Conditions of Reading.
 1.
 Registration
 1.1
@@ -336,8 +335,6 @@ These terms and/or your use of the website shall be governed by and construed in
                   <Button floated='right' negative class="ui button" onClick={this.onSubmit}>Submit</Button>
                 </form>
               </div>
-            </div>
-            <div class="four wide column">
             </div>
             <br />
           </div>

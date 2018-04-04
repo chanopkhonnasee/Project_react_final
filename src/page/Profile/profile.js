@@ -59,11 +59,9 @@ class Profile extends Component {
 
 
     render() {
-
         const user = this.state.user.username
         return (
-            <div className="Profile">
-
+            <div className="Profile"> 
                 <Responsive minWidth={Responsive.onlyTablet.minWidth}>
                     <Navbar />
                     <br />
@@ -78,14 +76,10 @@ class Profile extends Component {
                         </div>
                         <br />
 
-                        <div class="ui grid">
-                            <div class="four wide column">
-                            </div>
-                            <div class="eight wide column">
+                        <div class="ui grid centered">
+                            
+                            <div class="ten wide column">
                                 <form class="ui form ">
-
-
-
                                     <div class="unstackable two fields">
                                         <div class="field">
                                             <label>Username</label>
@@ -140,36 +134,31 @@ class Profile extends Component {
                                     <Button negative floated='right' class="ui button" onClick={this.onSubmit}>Submit</Button>
                                 </form>
                             </div>
-                        </div>
-                        <div class="four wide column">
                         </div>
                         <br />
                     </div>
                     <Footer />
                 </Responsive>
+
                 <Responsive {...Responsive.onlyMobile}>
                     <Navbar />
                     <br />
-                    <div class='pro'>
+                    <div class='promo'>
                         <div>
                             <Header as='h2' icon textAlign='center'>
                                 <Icon name='id card outline' circular />
                                 <Header.Content>
                                     YOUR PROFILE
-            </Header.Content>
+                                </Header.Content>
                             </Header>
                         </div>
                         <br />
 
-                        <div class="ui grid">
-                            <div class="four wide column">
-                            </div>
-                            <div class="eight wide column">
+                        <div class="ui grid centered">
+            
+                            <div class="fourteen wide column">
                                 <form class="ui form ">
-
-
-
-                                    <div class="unstackable two fields">
+                               <div class="unstackable two fields">
                                         <div class="field">
                                             <label>Username</label>
                                             <div class="ui input">
@@ -217,14 +206,9 @@ class Profile extends Component {
                                             </div>
                                         </div>
                                     </div>
-
-
-
                                     <Button negative floated='right' class="ui button" onClick={this.onSubmit}>Submit</Button>
                                 </form>
                             </div>
-                        </div>
-                        <div class="four wide column">
                         </div>
                         <br />
                     </div>
