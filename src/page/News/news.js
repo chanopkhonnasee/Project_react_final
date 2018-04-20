@@ -60,7 +60,7 @@ class News extends Component {
                   <Item.Header as='a'>{list.title}</Item.Header><br /><br />
                   <p>Description</p>
                   <Item.Description>
-                  <div class="field content">
+                  <div class="field">
                       <TextArea autoHeight rows={5}  cols={50}  readonly='true'>{list.content}</TextArea>
                     </div></Item.Description>
                   <Item.Extra>
@@ -93,7 +93,7 @@ class News extends Component {
                   <Item.Header as='a'>{list.title}</Item.Header><br /><br />
                   <p>Description</p>
                   <Item.Description>
-                  <div class="field content">
+                  <div class="field">
                       <TextArea autoHeight rows={5} cols={50} readonly='true'>{list.content}</TextArea>
                     </div></Item.Description>
                   <Item.Extra>
