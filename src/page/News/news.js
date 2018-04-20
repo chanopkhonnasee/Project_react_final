@@ -61,7 +61,7 @@ class News extends Component {
                   <p>Description</p>
                   <Item.Description>
                   <div class="field">
-                      <TextArea autoHeight rows={5}  readonly='true'>{list.content}</TextArea>
+                      <TextArea autoHeight rows={5}  cols={50}  readonly='true'>{list.content}</TextArea>
                     </div></Item.Description>
                   <Item.Extra>
                   
@@ -94,7 +94,7 @@ class News extends Component {
                   <p>Description</p>
                   <Item.Description>
                   <div class="field">
-                      <TextArea  rows={5} cols={10} readonly='true'>{list.content}</TextArea>
+                      <TextArea autoHeight rows={5} cols={50} readonly='true'>{list.content}</TextArea>
                     </div></Item.Description>
                   <Item.Extra>
                     <Label size="mini">{list.category}</Label>
@@ -137,7 +137,7 @@ class News extends Component {
                     <p>Description</p>
                     <Item.Description>
                     <div class="field">
-                      <TextArea  rows={3}  readonly='true'>{list.content}</TextArea>
+                      <TextArea  rows={3} cols={10}   readonly='true'>{list.content}</TextArea>
                       </div>
                     </Item.Description>
                     <Item.Extra>
@@ -169,7 +169,7 @@ class News extends Component {
                     <p>Description</p>
                     <Item.Description>
                     <div class="field">
-                      <TextArea  rows={3}  readonly='true'>{list.content}</TextArea>
+                      <TextArea  rows={3} cols={10}  readonly='true'>{list.content}</TextArea>
                       </div>
                     </Item.Description>
                     <Item.Extra>
