@@ -137,7 +137,7 @@ class News extends Component {
                     <p>Description</p>
                     <Item.Description>
                     <div class="field">
-                      <TextArea  rows={3} cols={10}   readonly='true'>{list.content}</TextArea>
+                      <TextArea  rows={3} cols={25}   readonly='true'>{list.content}</TextArea>
                       </div>
                     </Item.Description>
                     <Item.Extra>
@@ -169,7 +169,7 @@ class News extends Component {
                     <p>Description</p>
                     <Item.Description>
                     <div class="field">
-                      <TextArea  rows={3} cols={10}  readonly='true'>{list.content}</TextArea>
+                      <TextArea  rows={3} cols={25}  readonly='true'>{list.content}</TextArea>
                       </div>
                     </Item.Description>
                     <Item.Extra>
